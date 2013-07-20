@@ -1,4 +1,5 @@
 class StatusesController < ApplicationController
+  before_filter :authenticate_user!, only: [:new, :create, :update, :edit]
   # GET /statuses
   # GET /statuses.json
   def index
